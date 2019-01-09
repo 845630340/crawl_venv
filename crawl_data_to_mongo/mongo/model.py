@@ -8,7 +8,11 @@ def connect_mongo():
 
 class TouTiaoModel(Document):
     title = StringField(null=True, default='')
-    text = StringField(null=True, default='')
-    date = DateTimeField(null=True)
-    reading_count = IntField(null=False)
+    abstract = StringField(null=True, default='')
+    chinese_tag = StringField(null=True, default='')
+    comments_count = IntField(null=False, default=0)
+    label = ListField()
+    source_url = StringField(null=True, default='')
+    date = DateTimeField()
+
     meta = {'collection': 'TouTiao'}
