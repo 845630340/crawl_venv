@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f205264d-9dc2-41b2-a808-19ddaf636221" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/all_task_crawl.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/all_task_crawl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,13 +61,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
-          <entry key="py" value="16579" />
+          <entry key="py" value="17744" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="17" />
-          <entry key="Python" value="16579" />
+          <entry key="Python" value="17744" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,14 +75,14 @@
           <entry key="2018-11-30_test" value="1" />
           <entry key="csv" value="1" />
           <entry key="data_hello" value="1" />
-          <entry key="py" value="55" />
+          <entry key="py" value="61" />
           <entry key="pyi" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="55" />
+          <entry key="Python" value="61" />
           <entry key="PythonStub" value="2" />
         </counts>
       </usages-collector>
@@ -89,13 +90,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="837">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding>
-                <element signature="e#22#37#0" expanded="true" />
+                <element signature="e#23#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="81">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#22#63#0" expanded="true" />
               </folding>
@@ -113,14 +114,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="859">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
               <folding>
-                <element signature="e#23#37#0" expanded="true" />
+                <element signature="e#22#37#0" expanded="true" />
+                <element signature="e#418#739#0" />
+                <element signature="e#604#1394#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_toutiao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -179,7 +191,6 @@
         <option value="$PROJECT_DIR$/crawl_data.py" />
         <option value="$PROJECT_DIR$/emx.py" />
         <option value="$PROJECT_DIR$/EMX.py" />
-        <option value="$PROJECT_DIR$/test_any.py" />
         <option value="$PROJECT_DIR$/Adview.py" />
         <option value="$PROJECT_DIR$/total_rating.py" />
         <option value="$PROJECT_DIR$/time_test.py" />
@@ -190,13 +201,15 @@
         <option value="$PROJECT_DIR$/better_emx.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/__init__.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/all_task_crawl.py" />
+        <option value="$PROJECT_DIR$/test_any.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py" />
+        <option value="$PROJECT_DIR$/test_toutiao.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="-1080" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
@@ -221,7 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,22 +246,11 @@
               <item name="crawl_venv" type="462c0819:PsiDirectoryNode" />
               <item name="crawl_data_to_mongo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="crawl_venv" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crawl_venv" type="462c0819:PsiDirectoryNode" />
-              <item name="crawl_data_to_mongo" type="462c0819:PsiDirectoryNode" />
-              <item name="crawl_web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crawl_venv" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crawl_venv" type="462c0819:PsiDirectoryNode" />
-              <item name="crawl_data_to_mongo" type="462c0819:PsiDirectoryNode" />
-              <item name="mongo" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,48 +354,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_data_from_mongo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="flask_venv" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_data_from_mongo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="mongo_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="flask_venv" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mongo_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test2" type="PythonConfigurationType" factoryName="Python">
       <module name="flask_venv" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -416,22 +375,64 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_any" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flask_venv" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_any.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_toutiao" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flask_venv" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_toutiao.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.test2" />
       <item itemvalue="Python.111" />
-      <item itemvalue="Python.mongo_test" />
-      <item itemvalue="Python.get_data_from_mongo" />
       <item itemvalue="Python.better_emx" />
       <item itemvalue="Python.all_task_crawl" />
       <item itemvalue="Python.TouTiaoCrawl" />
+      <item itemvalue="Python.test_any" />
+      <item itemvalue="Python.test_toutiao" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.TouTiaoCrawl" />
+        <item itemvalue="Python.test_toutiao" />
+        <item itemvalue="Python.test_any" />
         <item itemvalue="Python.all_task_crawl" />
         <item itemvalue="Python.better_emx" />
-        <item itemvalue="Python.get_data_from_mongo" />
-        <item itemvalue="Python.mongo_test" />
       </list>
     </recent_temporary>
   </component>
@@ -449,20 +450,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="-1080" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13533439" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.12796208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.327787" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31287128" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36831683" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3237624" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.16039604" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -535,9 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4">
           <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#41#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -569,6 +569,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/get_data_from_mongo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-327">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/all_task_crawl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -578,15 +585,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_any.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1324">
-          <caret line="100" column="34" lean-forward="true" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
+        <state relative-caret-position="540">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_data_from_mongo.py">
+    <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-327">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state relative-caret-position="81">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#22#63#0" expanded="true" />
           </folding>
@@ -595,30 +602,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="837">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
             <element signature="e#23#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py">
+    <entry file="file://$PROJECT_DIR$/test_toutiao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding>
-            <element signature="e#22#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="297">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="859">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
           <folding>
             <element signature="e#22#37#0" expanded="true" />
+            <element signature="e#418#739#0" />
+            <element signature="e#604#1394#0" />
           </folding>
         </state>
       </provider>

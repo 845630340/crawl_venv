@@ -7,6 +7,7 @@ from mongoengine import connect
 
 logging.basicConfig(level=logging.DEBUG)
 
+
 class TouTiaoOperation:
     def __init__(self):
         connect('db_web_data')
@@ -28,12 +29,10 @@ class TouTiaoOperation:
         except Exception, e:
             logging.info('toutiao failed to save one data | error : {}'.format(e))
 
-
     def save_all_datas(self, datas):
         for data in datas:
             self.save_data(data)
         logging.info('---toutiao save ALL datas successfully---')
-
 
     def get_data(self):
         model = TouTiaoModel
