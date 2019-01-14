@@ -2,6 +2,7 @@
 from mongoengine import connect, Document
 from mongoengine.fields import *
 
+
 def connect_mongo():
     connect('db_web_data')
 
@@ -13,6 +14,8 @@ class TouTiaoModel(Document):
     comments_count = IntField(null=False, default=0)
     label = ListField()
     source_url = StringField(null=True, default='')
-    date = DateTimeField()
+    release_time = DateTimeField(required=True)
+    crawl_time = DateTimeField(required=True)
+    time_span = StringField(required=True)
 
     meta = {'collection': 'TouTiao'}

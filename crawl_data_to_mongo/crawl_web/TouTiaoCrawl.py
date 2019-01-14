@@ -1,6 +1,9 @@
 # -*- coding:utf8 -*-
 import requests
 import time
+import random
+from datetime import datetime
+from bs4 import BeautifulSoup
 from crawl_data_to_mongo.mongo.operation import TouTiaoOperation
 
 
@@ -9,6 +12,13 @@ class ToutiaoCrawl:
     1. Fields: title, abstract, chinese_tag, comments_count, label, source_url, date (the crawl datetime)
     2. Be careful: maybe need to change the cookie every time you crawl, otherwise the request will be wrong.
     """
+    headers = {
+        "accept": "text/javascript, text/html, application/xml, text/xml, */*",
+        "content-type": "application/x-www-form-urlencoded",
+        "referer": "https://www.toutiao.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+        "cookie": """tt_webid=6642930114115356168; WEATHER_CITY=%E5%8C%97%E4%BA%AC; UM_distinctid=1681d2ce83d562-0ee42d42f41f97-10336653-13c680-1681d2ce83edb4; tt_webid=6642930114115356168; csrftoken=7dd3951af35b50bf3d31720879f7995a; uuid="w:5d95a3d5775e407b8ab2617da925d965"; CNZZDATA1259612802=491698772-1546675650-https%253A%252F%252Fwww.google.com%252F%7C1547193903; __tasessionId=8uun05bwi1547195138926"""
+    }
 
     def display(self, a_dict):
         """
@@ -25,36 +35,53 @@ class ToutiaoCrawl:
                 print '--------------'
         print '----------------------'
 
+    def get_release_time(self, source_url):
+        """
+        Enter source_url page to crawl release_time.
+        Maybe can filter many url, beceuse of the different format of web page.
+        Highly unstable，make do with it!
+        """
+        r = requests.get(source_url, headers=self.headers).text
+        base_data = BeautifulSoup(r, 'lxml')
+        try:
+            date = base_data.find_all('script')[6].text
+            index = date.index('time')
+            str_time = date[index + 7:index + 26]
+            release_time = datetime.strptime(str_time, '%Y-%m-%d %H:%M:%S')
+            return release_time
+        except (ValueError, IndexError):
+            return None
+
     def get_data(self):
         toutiaoOP = TouTiaoOperation()
         home_url = 'https://www.toutiao.com/api/pc/feed/?min_behot_time=0'
-        headers = {
-            "accept": "text/javascript, text/html, application/xml, text/xml, */*",
-            "content-type": "application/x-www-form-urlencoded",
-            "referer": "https://www.toutiao.com/",
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
-            "cookie": """tt_webid=6642930114115356168; WEATHER_CITY=%E5%8C%97%E4%BA%AC; UM_distinctid=1681d2ce83d562-0ee42d42f41f97-10336653-13c680-1681d2ce83edb4; tt_webid=6642930114115356168; csrftoken=7dd3951af35b50bf3d31720879f7995a; uuid="w:5d95a3d5775e407b8ab2617da925d965"; CNZZDATA1259612802=491698772-1546675650-https%253A%252F%252Fwww.google.com%252F%7C1547193903; __tasessionId=8uun05bwi1547195138926"""
-        }
         for i in range(5):
             all_datas = []
-            r = requests.get(home_url, headers=headers)
+            r = requests.get(home_url, headers=self.headers)
 
             json_data = r.json()['data']
             next_time = r.json()['next']['max_behot_time']
             home_url = 'https://www.toutiao.com/api/pc/feed/?max_behot_time={}'.format(str(next_time))
 
             for each_dict in json_data:
-                if 'chinese_tag' in each_dict and 'comments_count' in each_dict and 'label' in each_dict and 'abstract' in each_dict :
+                if 'chinese_tag' in each_dict and 'comments_count' in each_dict and 'label' in each_dict and \
+                        'abstract' in each_dict and 'source_url' in each_dict and 'behot_time' in each_dict:
                     data = {}
+                    source_url = 'https://www.toutiao.com' + each_dict['source_url']
+                    if self.get_release_time(source_url):
+                        data['release_time'] = self.get_release_time(source_url)
+                    else:
+                        continue
                     data['title'] = each_dict['title']
                     data['abstract'] = each_dict['abstract']
                     data['chinese_tag'] = each_dict['chinese_tag']
                     data['comments_count'] = each_dict['comments_count']
                     data['label'] = each_dict['label']
-                    data['source_url'] = 'https://www.toutiao.com' + each_dict['source_url']
+                    data['source_url'] = source_url
                     all_datas.append(data)
             toutiaoOP.save_all_datas(all_datas)
-            time.sleep(3)
+            time.sleep(random.randint(3, 8))
+
 
 toutiao = ToutiaoCrawl()
 toutiao.get_data()

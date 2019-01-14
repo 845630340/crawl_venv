@@ -2,7 +2,7 @@
 
 import logging
 from model import TouTiaoModel
-from datetime import date
+from datetime import datetime
 from mongoengine import connect
 
 logging.basicConfig(level=logging.DEBUG)
@@ -14,6 +14,12 @@ class TouTiaoOperation:
         logging.info('connect mongo successfully!')
 
     def save_data(self, data):
+        """
+        behot_time: datetime.datetime -> str
+        create_time: datetime.datetime -> str
+        time_span: datetime.timedelta
+        """
+        create_date = datetime.now()
         toutiao = TouTiaoModel(
             title=data['title'],
             abstract=data['abstract'],
@@ -21,7 +27,9 @@ class TouTiaoOperation:
             comments_count=data['comments_count'],
             label=data['label'],
             source_url=data['source_url'],
-            date=str(date.today()),
+            release_time=data['release_time'].strftime('%Y-%m-%d %H:%M:%S'),
+            crawl_time=create_date.strftime('%Y-%m-%d %H:%M:%S'),
+            time_span=str(create_date - data['release_time'])
         )
         try:
             toutiao.save()
