@@ -68,8 +68,9 @@ class ToutiaoCrawl:
                         'abstract' in each_dict and 'source_url' in each_dict and 'behot_time' in each_dict:
                     data = {}
                     source_url = 'https://www.toutiao.com' + each_dict['source_url']
-                    if self.get_release_time(source_url):
-                        data['release_time'] = self.get_release_time(source_url)
+                    release_time = self.get_release_time(source_url)
+                    if release_time:
+                        data['release_time'] = release_time
                     else:
                         continue
                     data['title'] = each_dict['title']
