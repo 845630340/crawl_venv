@@ -52,14 +52,17 @@ class ToutiaoCrawl:
         except (ValueError, IndexError):
             return None
 
-    def get_data(self):
+    def get_data(self, n):
         toutiaoOP = TouTiaoOperation()
         home_url = 'https://www.toutiao.com/api/pc/feed/?min_behot_time=0'
-        for i in range(5):
+        for i in range(n):
             all_datas = []
             r = requests.get(home_url, headers=self.headers)
 
-            json_data = r.json()['data']
+            json_data = r.json().get('data', None)
+            if json_data is None:
+                raise StopIteration('Finish : TouTiao crawl to the buttom')
+
             next_time = r.json()['next']['max_behot_time']
             home_url = 'https://www.toutiao.com/api/pc/feed/?max_behot_time={}'.format(str(next_time))
 
@@ -85,4 +88,4 @@ class ToutiaoCrawl:
 
 
 toutiao = ToutiaoCrawl()
-toutiao.get_data()
+toutiao.get_data(1)  # seems to be no limit to the number of TouTiao's requests

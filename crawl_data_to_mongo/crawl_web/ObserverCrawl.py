@@ -58,6 +58,6 @@ class ObserverCrawl:
 
 
 observer = ObserverCrawl()
-observer.get_data(1)
-#observer.get_label('https://www.guancha.cn/internation/2019_01_13_486722.shtml')
+observer.get_data(1)  # max value of param is 15, suggest to look at the web page
+
 
