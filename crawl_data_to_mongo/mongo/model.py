@@ -24,9 +24,9 @@ class TouTiaoModel(Document):
 class ObserverModel(Document):
     title = StringField(null=True, default='')
     abstract = StringField(null=True, default='')
-    chinese_tag = StringField(null=True, default='')  # ...
+    chinese_tag = StringField(null=True, default='')
     comments_count = IntField(null=True, default=0)
-    label = ListField()  # ...
+    label = ListField()
     source_url = StringField(null=True, default='')
     release_time = DateTimeField(required=True)
     crawl_time = DateTimeField(required=True)
