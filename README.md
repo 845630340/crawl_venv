@@ -2,4 +2,4 @@
 
 This repository is used to crawl webs and then save datas to mongo or get datas from mongo.
 
-webs_collection = ('今日头条',)
+webs_collection = ('今日头条', '观察者网')
