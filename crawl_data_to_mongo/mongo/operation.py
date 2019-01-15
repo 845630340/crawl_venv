@@ -1,7 +1,7 @@
 # -*- coding:utf8 -*-
 
 import logging
-from model import TouTiaoModel
+from model import TouTiaoModel, ObserverModel
 from datetime import datetime
 from mongoengine import connect
 
@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 class TouTiaoOperation:
     def __init__(self):
         connect('db_web_data')
-        logging.info('connect mongo successfully!')
+        logging.info('connect mongo: TouTiao successfully!')
 
     def save_data(self, data):
         """
@@ -44,5 +44,40 @@ class TouTiaoOperation:
 
     def get_data(self):
         model = TouTiaoModel
+        data = model.objects.no_cache()
+        return data
+
+
+class ObserverOperation:
+    def __init__(self):
+        connect('db_web_data')
+        logging.info('connect mongo: Observer successfully!')
+
+    def save_data(self, data):
+        create_date = datetime.now()
+        observer = ObserverModel(
+            title=data['title'],
+            abstract=data['abstract'],
+            chinese_tag=data['chinese_tag'],
+            comments_count=data['comments_count'],
+            label=data.get('label', []),
+            source_url=data['source_url'],
+            release_time=data['release_time'].strftime('%Y-%m-%d %H:%M:%S'),
+            crawl_time=create_date.strftime('%Y-%m-%d %H:%M:%S'),
+            time_span=str(create_date - data['release_time'])
+        )
+        try:
+            observer.save()
+            logging.info('observer save one data successfully.')
+        except Exception, e:
+            logging.info('observer failed to save one data | error : {}'.format(e))
+
+    def save_all_datas(self, datas):
+        for data in datas:
+            self.save_data(data)
+        logging.info('---observer save ALL datas successfully---')
+
+    def get_data(self):
+        model = ObserverModel
         data = model.objects.no_cache()
         return data

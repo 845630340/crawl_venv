@@ -81,7 +81,7 @@ class ToutiaoCrawl:
                     data['source_url'] = source_url
                     all_datas.append(data)
             toutiaoOP.save_all_datas(all_datas)
-            time.sleep(random.randint(3, 8))
+            time.sleep(random.randint(3, 10))
 
 
 toutiao = ToutiaoCrawl()

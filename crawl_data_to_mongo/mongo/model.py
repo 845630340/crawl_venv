@@ -8,10 +8,10 @@ def connect_mongo():
 
 
 class TouTiaoModel(Document):
-    title = StringField(null=True, default='')
+    title = StringField(null=True, default='')  # null = True : the value of field cannot be empty,must set a value.
     abstract = StringField(null=True, default='')
     chinese_tag = StringField(null=True, default='')
-    comments_count = IntField(null=False, default=0)
+    comments_count = IntField(null=True, default=0)
     label = ListField()
     source_url = StringField(null=True, default='')
     release_time = DateTimeField(required=True)
@@ -19,3 +19,17 @@ class TouTiaoModel(Document):
     time_span = StringField(required=True)
 
     meta = {'collection': 'TouTiao'}
+
+
+class ObserverModel(Document):
+    title = StringField(null=True, default='')
+    abstract = StringField(null=True, default='')
+    chinese_tag = StringField(null=True, default='')  # ...
+    comments_count = IntField(null=True, default=0)
+    label = ListField()  # ...
+    source_url = StringField(null=True, default='')
+    release_time = DateTimeField(required=True)
+    crawl_time = DateTimeField(required=True)
+    time_span = StringField(required=True)
+
+    meta = {'collection': 'Observer'}
