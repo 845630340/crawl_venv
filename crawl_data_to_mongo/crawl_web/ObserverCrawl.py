@@ -4,11 +4,25 @@ import requests
 import random
 import time
 from datetime import datetime
+from bs4 import BeautifulSoup
 from lxml import etree
 from crawl_data_to_mongo.mongo.operation import ObserverOperation
 
 
 class ObserverCrawl:
+    """
+    Info: the content of chinese_tag is English.
+    """
+
+    def get_label(self, source_url):
+        label_list = []
+        r = requests.get(source_url)
+        r.encoding = "UTF-8"
+        base_data = BeautifulSoup(r.text, 'lxml')
+        label = base_data.find('div', class_="key-word").select('span')
+        for keyword in label[1:]:
+            label_list.append(keyword.text)
+        return label_list
 
     def strtime_to_datetime(self, str_time):
         release_time = datetime.strptime(str_time, '%Y-%m-%d %H:%M:%S')
@@ -34,13 +48,16 @@ class ObserverCrawl:
                 str_release_time = base_data.xpath('/html/body/div[2]/div[3]/ul/li[1]/ul/li[{}]/div/div/span/text()'.format(i))[0]
                 data['release_time'] = self.strtime_to_datetime(str_release_time)
                 source_url_part = base_data.xpath('/html/body/div[2]/div[3]/ul/li[1]/ul/li[{}]/a/@href'.format(i))[0]
-                data['source_url'] = 'https://www.guancha.cn' + source_url_part
+                source_url = 'https://www.guancha.cn' + source_url_part
+                data['source_url'] = source_url
                 data['chinese_tag'] = source_url_part.split('/')[1]
+                data['label'] = self.get_label(source_url)
                 all_datas.append(data)
             observerOP.save_all_datas(all_datas)
             time.sleep(random.randint(3, 10))
 
 
 observer = ObserverCrawl()
-observer.get_data(2)
+observer.get_data(1)
+#observer.get_label('https://www.guancha.cn/internation/2019_01_13_486722.shtml')
 
