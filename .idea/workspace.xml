@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f205264d-9dc2-41b2-a808-19ddaf636221" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/ObserverCrawl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py" afterDir="false" />
@@ -62,13 +63,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
-          <entry key="py" value="22985" />
+          <entry key="py" value="23060" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="17" />
-          <entry key="Python" value="22985" />
+          <entry key="Python" value="23060" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -119,7 +120,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/ObserverCrawl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
+            <state relative-caret-position="465">
               <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
@@ -131,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state>
+              <caret column="21" selection-start-column="21" selection-end-column="21" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
               </folding>
@@ -143,7 +144,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
+            <state relative-caret-position="438">
               <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
               <folding>
                 <element signature="e#22#63#0" expanded="true" />
@@ -224,11 +225,11 @@
         <option value="$PROJECT_DIR$/test_toutiao.py" />
         <option value="$PROJECT_DIR$/session.py" />
         <option value="$PROJECT_DIR$/chinese.txt" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/TouTiaoCrawl.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/ObserverCrawl.py" />
         <option value="$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
@@ -480,7 +481,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12796208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -488,13 +488,13 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.327787" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42475247" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27029702" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.27920792" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27920792" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -670,16 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#23#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/operation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -692,7 +682,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/mongo/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
+        <state relative-caret-position="438">
           <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
           <folding>
             <element signature="e#22#63#0" expanded="true" />
@@ -700,9 +690,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crawl_data_to_mongo/crawl_web/ObserverCrawl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="465">
           <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
