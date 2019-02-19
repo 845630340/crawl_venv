@@ -58,8 +58,8 @@ class ObserverCrawl:
                 data['label'] = self.get_label(source_url)
                 all_datas.append(data)
             observerOP.update_all_datas(all_datas)
-            time.sleep(random.randint(3, 5))
+            time.sleep(random.randint(2, 5))
 
 
 observer = ObserverCrawl()
-observer.get_data(10)  # max value of param is 15, suggest to look at the web page
+observer.get_data(15)  # max value of param is 15, suggest to look at the web page

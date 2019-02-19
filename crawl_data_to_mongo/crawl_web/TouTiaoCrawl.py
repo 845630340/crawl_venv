@@ -1,7 +1,7 @@
 import requests
 import time
 import random
-from datetime import datetime
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from crawl_venv.crawl_data_to_mongo.mongo.operation import TouTiaoOperation
 
@@ -80,7 +80,7 @@ class ToutiaoCrawl:
                     if release_time:
                         data['release_time'] = release_time
                     else:
-                        continue
+                        data['release_time'] = datetime.now() - timedelta(hours=1)
                     data['title'] = each_dict['title']
                     data['abstract'] = each_dict['abstract']
                     data['chinese_tag'] = each_dict['chinese_tag']
