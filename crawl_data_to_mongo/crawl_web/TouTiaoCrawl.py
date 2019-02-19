@@ -1,10 +1,9 @@
-# -*- coding:utf8 -*-
 import requests
 import time
 import random
 from datetime import datetime
 from bs4 import BeautifulSoup
-from crawl_data_to_mongo.mongo.operation import TouTiaoOperation
+from crawl_venv.crawl_data_to_mongo.mongo.operation import TouTiaoOperation
 
 
 class ToutiaoCrawl:
@@ -31,9 +30,9 @@ class ToutiaoCrawl:
         for each_dict in data_list:
             if 'chinese_tag' in each_dict:
                 for k, v in each_dict.items():
-                    print k, '---', v
-                print '--------------'
-        print '----------------------'
+                    print(k, '---', v)
+                print('--------------')
+        print('----------------------')
 
     def get_release_time(self, source_url):
         """
@@ -44,7 +43,11 @@ class ToutiaoCrawl:
         r = requests.get(source_url, headers=self.headers).text
         base_data = BeautifulSoup(r, 'lxml')
         try:
-            date = base_data.find_all('script')[6].text
+            date = ''
+            date_list = base_data.find_all('script')[:]
+            for each in date_list:
+                if 'time' in each.text:
+                    date = each.text
             index = date.index('time')
             str_time = date[index + 7:index + 26]
             release_time = datetime.strptime(str_time, '%Y-%m-%d %H:%M:%S')
@@ -55,7 +58,9 @@ class ToutiaoCrawl:
     def get_data(self, n):
         toutiaoOP = TouTiaoOperation()
         home_url = 'https://www.toutiao.com/api/pc/feed/?min_behot_time=0'
+        #home_url = 'https://www.toutiao.com/api/pc/feed/?category=news_hot&max_behot_time=0'
         for i in range(n):
+            print('index is :', i+1)
             all_datas = []
             r = requests.get(home_url, headers=self.headers)
 
@@ -83,9 +88,9 @@ class ToutiaoCrawl:
                     data['label'] = each_dict['label']
                     data['source_url'] = source_url
                     all_datas.append(data)
-            toutiaoOP.save_all_datas(all_datas)
-            time.sleep(random.randint(3, 10))
+            toutiaoOP.update_all_datas(all_datas)
+            time.sleep(random.randint(3, 5))
 
 
 toutiao = ToutiaoCrawl()
-toutiao.get_data(1)  # seems to be no limit to the number of TouTiao's requests
+toutiao.get_data(100)  # seems to be no limit to the number of TouTiao's requests

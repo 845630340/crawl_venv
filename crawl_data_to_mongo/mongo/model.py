@@ -18,7 +18,15 @@ class TouTiaoModel(Document):
     crawl_time = DateTimeField(required=True)
     time_span = StringField(required=True)
 
-    meta = {'collection': 'TouTiao'}
+    meta = {
+        'collection': 'TouTiao',
+        'indexes':[
+            {
+                'fields': ['title'],
+                'unique': True
+            }
+        ]
+    }
 
 
 class ObserverModel(Document):
@@ -32,4 +40,12 @@ class ObserverModel(Document):
     crawl_time = DateTimeField(required=True)
     time_span = StringField(required=True)
 
-    meta = {'collection': 'Observer'}
+    meta = {
+        'collection': 'Observer',
+        'indexes':[
+            {
+                'fields': ['title'],
+                'unique': True
+            }
+        ]
+    }
