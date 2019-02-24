@@ -101,4 +101,4 @@ class ToutiaoCrawl:
 
 
 toutiao = ToutiaoCrawl()
-toutiao.get_data(200)  # seems to be no limit to the number of TouTiao's requests
+toutiao.get_data(300)  # seems to be no limit to the number of TouTiao's requests
