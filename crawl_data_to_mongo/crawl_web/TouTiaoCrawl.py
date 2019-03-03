@@ -65,40 +65,43 @@ class ToutiaoCrawl:
 
     def get_data(self, n):
         toutiaoOP = TouTiaoOperation()
-        home_url = 'https://www.toutiao.com/api/pc/feed/?min_behot_time=0'
-        #home_url = 'https://www.toutiao.com/api/pc/feed/?category=news_hot&max_behot_time=0'
+        #home_url = 'https://www.toutiao.com/api/pc/feed/?min_behot_time=0'
+        home_url = 'https://www.toutiao.com/api/pc/feed/?category=news_hot&max_behot_time=0'
         for i in range(n):
-            print('index is :', i + 1)
-            all_datas = []
-            r = requests.get(home_url, headers=self.headers)
+            try:
+                print('index is :', i + 1)
+                all_datas = []
+                r = requests.get(home_url, headers=self.headers, timeout=5)
 
-            json_data = r.json().get('data', None)
-            if json_data is None:
-                raise StopIteration('Finish : TouTiao crawl to the buttom')
+                json_data = r.json().get('data', None)
+                if json_data is None:
+                    raise StopIteration('Finish : TouTiao crawl to the buttom')
 
-            next_time = r.json()['next']['max_behot_time']
-            home_url = 'https://www.toutiao.com/api/pc/feed/?max_behot_time={}'.format(str(next_time))
+                next_time = r.json()['next']['max_behot_time']
+                home_url = 'https://www.toutiao.com/api/pc/feed/?max_behot_time={}'.format(str(next_time))
 
-            for each_dict in json_data:
-                if 'chinese_tag' in each_dict and 'comments_count' in each_dict and 'label' in each_dict and \
-                        'abstract' in each_dict and 'source_url' in each_dict and 'behot_time' in each_dict:
-                    data = {}
-                    source_url = 'https://www.toutiao.com' + each_dict['source_url']
-                    release_time = self.get_release_time(source_url)
-                    if release_time:
-                        data['release_time'] = release_time
-                    else:
-                        data['release_time'] = datetime.now() - timedelta(hours=1)
-                    data['title'] = each_dict['title']
-                    data['abstract'] = each_dict['abstract']
-                    data['chinese_tag'] = each_dict['chinese_tag']
-                    data['comments_count'] = each_dict['comments_count']
-                    data['label'] = each_dict['label']
-                    data['source_url'] = source_url
-                    all_datas.append(data)
-            toutiaoOP.update_all_datas(all_datas)
-            time.sleep(random.randint(4, 7))
+                for each_dict in json_data:
+                    if 'chinese_tag' in each_dict and 'comments_count' in each_dict and 'label' in each_dict and \
+                            'abstract' in each_dict and 'source_url' in each_dict and 'behot_time' in each_dict:
+                        data = {}
+                        source_url = 'https://www.toutiao.com' + each_dict['source_url']
+                        release_time = self.get_release_time(source_url)
+                        if release_time:
+                            data['release_time'] = release_time
+                        else:
+                            data['release_time'] = datetime.now() - timedelta(hours=1)
+                        data['title'] = each_dict['title']
+                        data['abstract'] = each_dict['abstract']
+                        data['chinese_tag'] = each_dict['chinese_tag']
+                        data['comments_count'] = each_dict['comments_count']
+                        data['label'] = each_dict['label']
+                        data['source_url'] = source_url
+                        all_datas.append(data)
+                toutiaoOP.update_all_datas(all_datas)
+                time.sleep(random.randint(4, 7))
+            except:
+                continue
 
 
 toutiao = ToutiaoCrawl()
-toutiao.get_data(300)  # seems to be no limit to the number of TouTiao's requests
+toutiao.get_data(500)  # seems to be no limit to the number of TouTiao's requests

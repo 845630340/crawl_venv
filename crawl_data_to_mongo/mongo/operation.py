@@ -1,7 +1,7 @@
 # -*- coding:utf8 -*-
 
 import logging
-from .model import TouTiaoModel, ObserverModel
+from .model import TouTiaoModel, ObserverModel, TencentModel
 from datetime import datetime
 from mongoengine import connect
 
@@ -123,5 +123,38 @@ class ObserverOperation:
 
     def get_data(self):
         model = ObserverModel
+        data = model.objects.no_cache()
+        return data
+
+
+class TencentOperation:
+    def __init__(self):
+        connect('db_web_data')
+        logging.info('connect mongo: Tencent successfully!')
+
+    def update_one_data(self, data):
+        create_date = datetime.now()
+        TencentModel.objects(
+            title=data['title']
+        ).update_one(
+            set__abstract=data['abstract'],
+            set__chinese_tag=data['chinese_tag'],
+            set__comments_count=data['comments_count'],
+            set__label=data['label'],
+            set__source_url=data['source_url'],
+            set__release_time=data['release_time'].strftime('%Y-%m-%d %H:%M:%S'),
+            set__crawl_time=create_date.strftime('%Y-%m-%d %H:%M:%S'),
+            set__time_span=str(create_date - data['release_time']),
+            upsert=True
+        )
+        logging.info('save one data, ok!')
+
+    def update_all_datas(self, datas):
+        for data in datas:
+            self.update_one_data(data)
+        logging.info('---Tencent save ALL datas successfully---')
+
+    def get_data(self):
+        model = TencentModel
         data = model.objects.no_cache()
         return data

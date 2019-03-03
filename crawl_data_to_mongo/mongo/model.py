@@ -20,7 +20,7 @@ class TouTiaoModel(Document):
 
     meta = {
         'collection': 'TouTiao',
-        'indexes':[
+        'indexes': [
             {
                 'fields': ['title'],
                 'unique': True
@@ -42,7 +42,29 @@ class ObserverModel(Document):
 
     meta = {
         'collection': 'Observer',
-        'indexes':[
+        'indexes': [
+            {
+                'fields': ['title'],
+                'unique': True
+            }
+        ]
+    }
+
+
+class TencentModel(Document):
+    title = StringField(null=True, default='')
+    abstract = StringField(null=True, default='')
+    chinese_tag = StringField(null=True, default='')
+    comments_count = IntField(null=True, default=0)
+    label = ListField()
+    source_url = StringField(null=True, default='')
+    release_time = DateTimeField(required=True)
+    crawl_time = DateTimeField(required=True)
+    time_span = StringField(required=True)
+
+    meta = {
+        'collection': 'Tencent',
+        'indexes': [
             {
                 'fields': ['title'],
                 'unique': True
