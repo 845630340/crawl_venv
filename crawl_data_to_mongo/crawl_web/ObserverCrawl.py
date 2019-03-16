@@ -61,7 +61,7 @@ class ObserverCrawl:
                 except:
                     continue
             observerOP.update_all_datas(all_datas)
-            time.sleep(random.randint(2, 5))
+            time.sleep(random.randint(2, 3))
 
 
 observer = ObserverCrawl()

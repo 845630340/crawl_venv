@@ -46,7 +46,7 @@ class TencentCrawl:
                         data['source_url'] = item['vurl']
                         all_datas.append(data)
                     tencentOP.update_all_datas(all_datas)
-                    time.sleep(random.randint(2, 5))
+                    time.sleep(random.randint(2, 3))
                     i += 1
 
 

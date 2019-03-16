@@ -65,8 +65,8 @@ class ToutiaoCrawl:
 
     def get_data(self, n):
         toutiaoOP = TouTiaoOperation()
-        #home_url = 'https://www.toutiao.com/api/pc/feed/?min_behot_time=0'
-        home_url = 'https://www.toutiao.com/api/pc/feed/?category=news_hot&max_behot_time=0'
+        home_url = 'https://www.toutiao.com/api/pc/feed/?min_behot_time=0'
+        #home_url = 'https://www.toutiao.com/api/pc/feed/?category=news_hot&max_behot_time=0'
         for i in range(n):
             try:
                 print('index is :', i + 1)
@@ -98,10 +98,10 @@ class ToutiaoCrawl:
                         data['source_url'] = source_url
                         all_datas.append(data)
                 toutiaoOP.update_all_datas(all_datas)
-                time.sleep(random.randint(3, 6))
+                time.sleep(random.randint(2, 3))
             except:
                 continue
 
 
 toutiao = ToutiaoCrawl()
-toutiao.get_data(500)  # seems to be no limit to the number of TouTiao's requests
+toutiao.get_data(300)  # seems to be no limit to the number of TouTiao's requests
