@@ -69,6 +69,11 @@ class TouTiaoOperation:
         data = model.objects.no_cache()
         return data
 
+    def custom_fetching_data(self):
+        model = TouTiaoModel
+        datas = model.objects
+        return datas
+
 
 class ObserverOperation:
     def __init__(self):
@@ -126,6 +131,10 @@ class ObserverOperation:
         data = model.objects.no_cache()
         return data
 
+    def custom_fetching_data(self):
+        model = ObserverModel
+        datas = model.objects
+        return datas
 
 class TencentOperation:
     def __init__(self):
@@ -158,3 +167,8 @@ class TencentOperation:
         model = TencentModel
         data = model.objects.no_cache()
         return data
+
+    def custom_fetching_data(self):
+        model = TencentModel
+        datas = model.objects
+        return datas
