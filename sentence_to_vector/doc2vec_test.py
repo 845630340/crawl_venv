@@ -48,11 +48,11 @@ def get_model_big():
 
 # get_model_big() # 生成model
 
-model = Doc2Vec.load('title_model_test')
-model.delete_temporary_training_data(keep_doctags_vectors=True, keep_inference=True)
-print('finish loading the model')
-
-print(model.docvecs.vectors_docs[0])
+# model = Doc2Vec.load('title_model_test')
+# model.delete_temporary_training_data(keep_doctags_vectors=True, keep_inference=True)
+# print('finish loading the model')
+#
+# print(model.docvecs.vectors_docs[0])
 # text = '顶 着 美国 压力 法国参议院 把 这事否 了'.split()
 # vector = model.infer_vector(text)
 # print(vector.mean()) # 获得一个句向量
@@ -64,8 +64,8 @@ print(model.docvecs.vectors_docs[0])
 # print(dataset.data[:3, :2])
 
 
-# import csv
-# with open('iris1.csv', 'r') as f:
-#     csvreader = csv.reader(f)
-#     final_list = list(csvreader)
-#     print(final_list[:3, :2])
+import csv
+with open('iris.csv', 'r') as f:
+    csvreader = csv.reader(f)
+    final_list = list(csvreader)
+    print(final_list[:3, :2])

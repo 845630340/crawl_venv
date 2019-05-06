@@ -67,17 +67,25 @@ class Model:
         print('--- finishing abstract_model ! ---')
 
     def get_tag_model(self):
-        tag_list = self.get_tag_list()
+        tag_list = self.get_tag_list(distinct=True)
+        tag_list = [[each] for each in tag_list]
 
         model = Word2Vec(tag_list, size=100, window=5, min_count=1, workers=4)
         model.save('tag_model')
         print('--- finishing chinese_tag model ! ---')
 
-    def get_tag_list(self):
+    def get_tag_list(self, distinct=True):
         tag_list = []
-        for each in self.datas:
-            tag_list += each.distinct('chinese_tag')
-        return tag_list
+        if distinct:
+            for each in self.datas:
+                tag_list += each.distinct('chinese_tag')
+            return tag_list
+        else:
+            for each in self.datas:
+                for one_new in each:
+                    tag_list.append(one_new.chinese_tag)
+            return tag_list
+
 
 
 
@@ -85,3 +93,12 @@ class Model:
 # model = Model()
 # model.get_tag_model()
 
+# datas = get_observer_datas()
+# release_time = datas[0].release_time
+# c_time = datas[0].crawl_time
+# span = c_time - release_time
+#
+# print(span)
+# print(dir(span))
+# print(type(span))
+# print(type(span.total_seconds())) # 秒，float型
