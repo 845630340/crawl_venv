@@ -91,7 +91,8 @@ class Model:
 
 
 # model = Model()
-# model.get_tag_model()
+# tag_list = model.get_tag_list(distinct=False)
+# print(len(tag_list))
 
 # datas = get_observer_datas()
 # release_time = datas[0].release_time

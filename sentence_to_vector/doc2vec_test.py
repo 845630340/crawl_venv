@@ -61,11 +61,12 @@ def get_model_big():
 # 取数据集数据，用作逻辑回归模型输入
 # from crawl_venv.sentence_to_vector import load_iris
 # dataset = load_iris()
-# print(dataset.data[:3, :2])
+# print(dataset.data[:3, :3])
+# print(dataset.target[:3])
 
 
-import csv
-with open('iris.csv', 'r') as f:
-    csvreader = csv.reader(f)
-    final_list = list(csvreader)
-    print(final_list[:3, :2])
+# import csv
+# with open('iris.csv', 'r') as f:
+#     csvreader = csv.reader(f)
+#     final_list = list(csvreader)
+#     print(final_list[:3, :2])
